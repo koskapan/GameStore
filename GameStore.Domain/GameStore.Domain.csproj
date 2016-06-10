@@ -81,9 +81,9 @@
     <Compile Include="Concrete\EFDbContext.cs" />
     <Compile Include="Concrete\EFGameRepository.cs" />
     <Compile Include="Entities\Game.cs" />
-    <Compile Include="Migrations\201606101117478_Initial.cs" />
-    <Compile Include="Migrations\201606101117478_Initial.Designer.cs">
-      <DependentUpon>201606101117478_Initial.cs</DependentUpon>
+    <Compile Include="Migrations\201606101324083_Initial.cs" />
+    <Compile Include="Migrations\201606101324083_Initial.Designer.cs">
+      <DependentUpon>201606101324083_Initial.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -95,8 +95,8 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201606101117478_Initial.resx">
-      <DependentUpon>201606101117478_Initial.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201606101324083_Initial.resx">
+      <DependentUpon>201606101324083_Initial.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

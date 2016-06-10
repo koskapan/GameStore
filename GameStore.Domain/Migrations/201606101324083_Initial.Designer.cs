@@ -13,7 +13,7 @@ namespace GameStore.Domain.Migrations
         
         string IMigrationMetadata.Id
         {
-            get { return "201606101117478_Initial"; }
+            get { return "201606101324083_Initial"; }
         }
         
         string IMigrationMetadata.Source
