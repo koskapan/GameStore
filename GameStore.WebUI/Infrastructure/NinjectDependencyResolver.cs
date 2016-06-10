@@ -7,6 +7,7 @@ using Moq;
 using Ninject;
 using GameStore.Domain.Abstract;
 using GameStore.Domain.Entities;
+using GameStore.Domain.Concrete;
 
 namespace GameStore.WebUI.Infrastructure
 {
@@ -32,14 +33,7 @@ namespace GameStore.WebUI.Infrastructure
 
         private void AddBindings()
         {
-            Mock<IGenericRepository<Game>> gameRepoMock = new Mock<IGenericRepository<Game>>();
-            gameRepoMock.Setup(m => m.Entities).Returns(new List<Game>
-            {
-                new Game() { Name = "SimCity", Price = 1499 },
-                new Game() { Name  = "TITANFALL", Price = 2299 },
-                new Game() { Name = "Battlefield 4", Price = 899.4M }
-            });
-            kernel.Bind(typeof(IGenericRepository<>)).ToConstant(gameRepoMock.Object);
+            kernel.Bind<IGameRepository>().To<EFGameRepository>();
         }
     }
 }

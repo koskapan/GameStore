@@ -10,15 +10,15 @@ namespace GameStore.WebUI.Controllers
 {
     public class GameController : Controller
     {
-        IGenericRepository<Game> gameRepo;
-        public GameController(IGenericRepository<Game> gamesRepository)
+        IGameRepository gameRepo;
+        public GameController(IGameRepository gamesRepository)
         {
             gameRepo = gamesRepository;
         }
         
         public ActionResult List()
         {
-            return View(gameRepo.Entities);
+            return View(gameRepo.Games);
         }
     }
 }

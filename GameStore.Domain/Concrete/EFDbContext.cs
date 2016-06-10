@@ -1,14 +1,15 @@
 ﻿using GameStore.Domain.Entities;
 using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace GameStore.Domain.Abstract
+namespace GameStore.Domain.Concrete
 {
-    public interface IGenericRepository<T>
+    public class EFDbContext: DbContext
     {
-        IEnumerable<T> Entities{ get; set; }
+        public DbSet<Game> Games { get; set; }
     }
 }
