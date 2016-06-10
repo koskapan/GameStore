@@ -1,0 +1,16 @@
+﻿@using GameStore.Domain.Entities
+@model IEnumerable<Game>
+
+@{
+    ViewBag.Title = "Games";
+}
+
+<h2>List</h2>
+@foreach (var game in Model)
+{
+    <div>
+        <h3> @game.Name </h3> 
+        <p>@game.Description</p>
+        <h4>@game.Price.ToString("# rub")</h4>
+    </div>
+}
