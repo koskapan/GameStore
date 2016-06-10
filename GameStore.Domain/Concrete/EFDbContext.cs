@@ -10,6 +10,8 @@ namespace GameStore.Domain.Concrete
 {
     public class EFDbContext: DbContext
     {
+        public EFDbContext() : base("DefaultConnection") { }
+
         public DbSet<Game> Games { get; set; }
     }
 }
