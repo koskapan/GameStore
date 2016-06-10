@@ -11,14 +11,15 @@ namespace GameStore.WebUI.Controllers
     public class GameController : Controller
     {
         IGameRepository gameRepo;
+        public int pageSize = 4;
         public GameController(IGameRepository gamesRepository)
         {
             gameRepo = gamesRepository;
         }
         
-        public ActionResult List()
+        public ViewResult List(int page = 1)
         {
-            return View(gameRepo.Games);
+            return View(gameRepo.Games.OrderBy(game => game.GameId).Skip((page -1 )*pageSize).Take(pageSize));
         }
     }
 }
