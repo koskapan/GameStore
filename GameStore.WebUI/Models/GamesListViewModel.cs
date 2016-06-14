@@ -10,5 +10,6 @@ namespace GameStore.WebUI.Models
     {
         public IEnumerable<Game> Games { get; set; }
         public PagingInfo pagingInfo { get; set; }
+        public string CurrentCategory { get; set; }
     }
 }

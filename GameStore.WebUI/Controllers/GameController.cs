@@ -18,7 +18,7 @@ namespace GameStore.WebUI.Controllers
             gameRepo = gamesRepository;
         }
         
-        public ViewResult List(int page = 1)
+        public ViewResult List(string category, int page = 1)
         {
             GamesListViewModel model = new GamesListViewModel
             {
@@ -28,7 +28,8 @@ namespace GameStore.WebUI.Controllers
                     CurrentPage = page,
                     ItemsPerPage = pageSize,
                     TotalItems = gameRepo.Games.Count()
-                }
+                },
+                CurrentCategory = category
             };
             return View(model);
         }

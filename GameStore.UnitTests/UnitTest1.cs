@@ -35,7 +35,7 @@ namespace GameStore.UnitTests
             GameController gameController = new GameController(gameRepoMock.Object);
             gameController.pageSize = 4;
 
-            GamesListViewModel result = (GamesListViewModel)gameController.List(2).Model;
+            GamesListViewModel result = (GamesListViewModel)gameController.List(null,2).Model;
 
             List<Game> games = result.Games.ToList();
             Assert.IsTrue(games.Count == 2);
@@ -81,12 +81,36 @@ namespace GameStore.UnitTests
             GameController controller = new GameController(gameRepoMock.Object);
             controller.pageSize = 3;
 
-            GamesListViewModel result = (GamesListViewModel)controller.List(2).Model;
+            GamesListViewModel result = (GamesListViewModel)controller.List(null,2).Model;
             PagingInfo pageInfo = result.pagingInfo;
             Assert.AreEqual(pageInfo.CurrentPage, 2);
             Assert.AreEqual(pageInfo.ItemsPerPage, 3);
             Assert.AreEqual(pageInfo.TotalItems, 5);
             Assert.AreEqual(pageInfo.TotalPages, 2);
+
+        }
+
+        [TestMethod]
+        public void Can_Filter_Games()
+        {
+            Mock<IGameRepository> gameRepoMock = new Mock<IGameRepository>();
+            gameRepoMock.Setup(m => m.Games).Returns(new List<Game>
+            {
+                new Game() { GameId = 1, Name = "Game1", Category="Cat1" },
+                new Game() { GameId = 2, Name = "Game2", Category="Cat2" },
+                new Game() { GameId = 3, Name = "Game3", Category="Cat1" },
+                new Game() { GameId = 4, Name = "Game4", Category="Cat3" },
+                new Game() { GameId = 5, Name = "Game5", Category="Cat2" }
+            });
+
+            GameController controller = new GameController(gameRepoMock.Object);
+
+            List<Game> result = ((GamesListViewModel)controller.List("Cat1", 1).Model).Games.ToList();
+
+            Assert.AreEqual(result.Count(), 2);
+            Assert.IsTrue(result[0].Name == "Game2" && result[0].Category == "Cat2");
+            Assert.IsTrue(result[1].Name == "Game5" && result[1].Category == "Cat2");
+
 
         }
     }
