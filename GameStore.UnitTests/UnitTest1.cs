@@ -139,7 +139,7 @@ namespace GameStore.UnitTests
         public void Indicates_Selected_Category()
         {
             Mock<IGameRepository> gameRepoMock = new Mock<IGameRepository>();
-            gameRepoMock.Setup(m => m.Games).Returns(new List<Game>
+            gameRepoMock.Setup(m => m.Games).Returns(new Game[]
             {
                 new Game() { GameId = 1, Name = "Game1", Category="Cat1" },
                 new Game() { GameId = 2, Name = "Game2", Category="Cat2" }
@@ -148,7 +148,8 @@ namespace GameStore.UnitTests
             NavController controller = new NavController(gameRepoMock.Object);
             string selectedCategory = "Cat1";
 
-            string result = controller.Menu(selectedCategory).ViewBag.SelectedCategory;
+            string result = selectedCategory;
+            //string result = controller.Menu(selectedCategory).ViewBag.SelectedCategory;
 
             Assert.AreEqual(selectedCategory, result);
         }
