@@ -22,7 +22,7 @@ namespace GameStore.WebUI.Controllers
         {
             GamesListViewModel model = new GamesListViewModel
             {
-                Games = gameRepo.Games.OrderBy(g => g.GameId).Skip((page - 1) * pageSize).Take(pageSize),
+                Games = gameRepo.Games.Where(g => g.Category == category).OrderBy(g => g.GameId).Skip((page - 1) * pageSize).Take(pageSize),
                 pagingInfo = new PagingInfo
                 {
                     CurrentPage = page,

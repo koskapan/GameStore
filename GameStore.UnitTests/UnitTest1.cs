@@ -105,13 +105,34 @@ namespace GameStore.UnitTests
 
             GameController controller = new GameController(gameRepoMock.Object);
 
-            List<Game> result = ((GamesListViewModel)controller.List("Cat1", 1).Model).Games.ToList();
+            List<Game> result = ((GamesListViewModel)controller.List("Cat2", 1).Model).Games.ToList();
 
-            Assert.AreEqual(result.Count(), 2);
+            Assert.AreEqual(2, result.Count());
             Assert.IsTrue(result[0].Name == "Game2" && result[0].Category == "Cat2");
             Assert.IsTrue(result[1].Name == "Game5" && result[1].Category == "Cat2");
+        }
 
+        [TestMethod]
+        public void Can_Create_Categories()
+        {
+            Mock<IGameRepository> gameRepoMock = new Mock<IGameRepository>();
+            gameRepoMock.Setup(m => m.Games).Returns(new List<Game>
+            {
+                new Game() { GameId = 1, Name = "Game1", Category="Cat1" },
+                new Game() { GameId = 2, Name = "Game2", Category="Cat2" },
+                new Game() { GameId = 3, Name = "Game3", Category="Cat1" },
+                new Game() { GameId = 4, Name = "Game4", Category="Cat3" },
+                new Game() { GameId = 5, Name = "Game5", Category="Cat2" }
+            });
 
+            NavController controller = new NavController(gameRepoMock.Object);
+
+            List<string> result = ((IEnumerable<string>) controller.Menu().Model).ToList();
+
+            Assert.AreEqual(3, result.Count);
+            Assert.AreEqual("Cat1", result[0]);
+            Assert.AreEqual("Cat2", result[1]);
+            Assert.AreEqual("Cat3", result[2]);
         }
     }
 }
