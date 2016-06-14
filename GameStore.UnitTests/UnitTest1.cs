@@ -134,5 +134,23 @@ namespace GameStore.UnitTests
             Assert.AreEqual("Cat2", result[1]);
             Assert.AreEqual("Cat3", result[2]);
         }
+
+        [TestMethod]
+        public void Indicates_Selected_Category()
+        {
+            Mock<IGameRepository> gameRepoMock = new Mock<IGameRepository>();
+            gameRepoMock.Setup(m => m.Games).Returns(new List<Game>
+            {
+                new Game() { GameId = 1, Name = "Game1", Category="Cat1" },
+                new Game() { GameId = 2, Name = "Game2", Category="Cat2" }
+            });
+
+            NavController controller = new NavController(gameRepoMock.Object);
+            string selectedCategory = "Cat1";
+
+            string result = controller.Menu(selectedCategory).ViewBag.SelectedCategory;
+
+            Assert.AreEqual(selectedCategory, result);
+        }
     }
 }
