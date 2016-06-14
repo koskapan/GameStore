@@ -15,8 +15,29 @@ namespace GameStore.WebUI
 
             routes.MapRoute(
                 name: null,
+                url: "",
+                defaults: new { controller = "Game", action = "List", category = (string)null, page = 1 }
+            );
+
+
+            routes.MapRoute(
+                name: null,
                 url: "Page{page}",
-                defaults: new {controller = "Game", action = "List" }
+                defaults: new {controller = "Game", action = "List", category = (string)null },
+                constraints: new { page = @"\d+" }
+            );
+
+            routes.MapRoute(
+                name: null,
+                url: "{category}",
+                defaults: new { controller = "Game", action = "List", page = 1 }
+            );
+
+            routes.MapRoute(
+                name: null,
+                url: "{category}/Page{page}",
+                defaults: new { controller = "Game", action = "List" },
+                constraints: new {page = @"\d+"}
             );
 
             routes.MapRoute(
