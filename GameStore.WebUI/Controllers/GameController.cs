@@ -27,7 +27,7 @@ namespace GameStore.WebUI.Controllers
                 {
                     CurrentPage = page,
                     ItemsPerPage = pageSize,
-                    TotalItems = gameRepo.Games.Count()
+                    TotalItems = category == null ? gameRepo.Games.Count() : gameRepo.Games.Where(g => g.Category == category).Count(),
                 },
                 CurrentCategory = category
             };
