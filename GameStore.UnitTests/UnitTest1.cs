@@ -153,5 +153,33 @@ namespace GameStore.UnitTests
 
             Assert.AreEqual(selectedCategory, result);
         }
+
+        [TestMethod]
+        public void Generate_Category_Specific_Game_Count()
+        {
+            Mock<IGameRepository> gameRepoMock = new Mock<IGameRepository>();
+            gameRepoMock.Setup(m => m.Games).Returns(new List<Game>
+            {
+                new Game() { GameId = 1, Name = "Game1", Category="Cat1" },
+                new Game() { GameId = 2, Name = "Game2", Category="Cat2" },
+                new Game() { GameId = 3, Name = "Game3", Category="Cat1" },
+                new Game() { GameId = 4, Name = "Game4", Category="Cat3" },
+                new Game() { GameId = 5, Name = "Game5", Category="Cat2" }
+            });
+
+            GameController controller = new GameController(gameRepoMock.Object);
+            controller.pageSize = 3;
+
+            int res1 = ((GamesListViewModel)controller.List("Cat1").Model).pagingInfo.TotalItems;
+            int res2 = ((GamesListViewModel)controller.List("Cat2").Model).pagingInfo.TotalItems;
+            int res3 = ((GamesListViewModel)controller.List("Cat3").Model).pagingInfo.TotalItems;
+            int resAll = ((GamesListViewModel)controller.List(null).Model).pagingInfo.TotalItems;
+
+            Assert.AreEqual(2, res1);
+            Assert.AreEqual(2, res2);
+            Assert.AreEqual(1, res3);
+            Assert.AreEqual(5, resAll);
+
+        }
     }
 }
