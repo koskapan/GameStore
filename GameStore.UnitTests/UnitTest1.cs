@@ -35,9 +35,9 @@ namespace GameStore.UnitTests
             GameController gameController = new GameController(gameRepoMock.Object);
             gameController.pageSize = 4;
 
-            IEnumerable<Game> result = (IEnumerable<Game>)gameController.List(2).Model;
+            GamesListViewModel result = (GamesListViewModel)gameController.List(2).Model;
 
-            List<Game> games = result.ToList();
+            List<Game> games = result.Games.ToList();
             Assert.IsTrue(games.Count == 2);
             Assert.AreEqual("Game5", games[0].Name);
             Assert.AreEqual("Game6", games[1].Name);
@@ -63,6 +63,31 @@ namespace GameStore.UnitTests
             Assert.AreEqual(@"<a class=""btn btn-default"" href=""Page1"">1</a>"
                 + @"<a class=""btn btn-default btn-primary selected"" href=""Page2"">2</a>"
                 + @"<a class=""btn btn-default"" href=""Page3"">3</a>", result.ToString());
+        }
+
+        [TestMethod]
+        public void Can_Send_Pagination_View_Model()
+        {
+            Mock<IGameRepository> gameRepoMock = new Mock<IGameRepository>();
+            gameRepoMock.Setup(m => m.Games).Returns(new List<Game>
+            {
+                new Game() { GameId = 1, Name = "Game1" },
+                new Game() { GameId = 2, Name = "Game2" },
+                new Game() { GameId = 3, Name = "Game3" },
+                new Game() { GameId = 4, Name = "Game4" },
+                new Game() { GameId = 5, Name = "Game5" }
+            });
+
+            GameController controller = new GameController(gameRepoMock.Object);
+            controller.pageSize = 3;
+
+            GamesListViewModel result = (GamesListViewModel)controller.List(2).Model;
+            PagingInfo pageInfo = result.pagingInfo;
+            Assert.AreEqual(pageInfo.CurrentPage, 2);
+            Assert.AreEqual(pageInfo.ItemsPerPage, 3);
+            Assert.AreEqual(pageInfo.TotalItems, 5);
+            Assert.AreEqual(pageInfo.TotalPages, 2);
+
         }
     }
 }
