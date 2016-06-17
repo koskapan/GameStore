@@ -1,10 +1,15 @@
-﻿using GameStore.Domain.Entities;
+﻿using GameStore.Domain.Abstract;
+using GameStore.Domain.Entities;
+using GameStore.WebUI.Controllers;
+using GameStore.WebUI.Models;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using Moq;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Web.Mvc;
 
 namespace GameStore.UnitTests
 {
@@ -102,6 +107,56 @@ namespace GameStore.UnitTests
             cart.Clear();
 
             Assert.AreEqual(0, cart.Lines.Count());
+        }
+
+        [TestMethod]
+        public void Can_Add_To_Cart()
+        {
+            Mock<IGameRepository> repo = new Mock<IGameRepository>();
+            repo.Setup(r => r.Games).Returns(new List<Game>
+            {
+                new Game { GameId =1, Name = "Game1", Category = "Cat1" }
+            }.AsQueryable());
+
+            Cart cart = new Cart();
+
+            CartController controller = new CartController(repo.Object);
+
+            controller.AddToCart(cart, 1, null);
+
+            Assert.AreEqual(1, cart.Lines.Count());
+            Assert.AreEqual(1, cart.Lines.ToList()[0].Game.GameId);
+
+        }
+
+        [TestMethod]
+        public void Add_Game_To_Cart_Goes_To_Cart_Screen()
+        {
+
+            Mock<IGameRepository> repo = new Mock<IGameRepository>();
+            repo.Setup(r => r.Games).Returns(new List<Game>
+            {
+                new Game { GameId =1, Name = "Game1", Category = "Cat1" }
+            }.AsQueryable());
+            Cart cart = new Cart();
+            CartController controller = new CartController(repo.Object);
+
+            RedirectToRouteResult result = controller.AddToCart(cart, 1, "myUrl");
+
+            Assert.AreEqual("Index", result.RouteValues["action"]);
+            Assert.AreEqual("myUrl", result.RouteValues["returnUrl"]);
+        }
+
+        [TestMethod]
+        public void Can_View_Cart_Content()
+        {
+            Cart cart = new Cart();
+            CartController controller = new CartController(null);
+
+            CartIndexViewModel result = (CartIndexViewModel)controller.Index(cart, "myUrl").ViewData.Model;
+
+            Assert.AreSame(cart, result.Cart);
+            Assert.AreEqual("myUrl", result.ReturnUrl);
         }
     }
 }
