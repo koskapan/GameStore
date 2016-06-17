@@ -1,5 +1,6 @@
 ﻿using GameStore.Domain.Abstract;
 using GameStore.Domain.Entities;
+using GameStore.WebUI.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -15,6 +16,15 @@ namespace GameStore.WebUI.Controllers
         public CartController(IGameRepository gameRepository)
         {
             gameRepo = gameRepository;
+        }
+
+        public ViewResult Index(string returnUrl)
+        {
+            return View(new CartIndexViewModel
+            {
+                Cart = GetCart(),
+                ReturnUrl = returnUrl
+            });
         }
 
         public RedirectToRouteResult AddToCart(int gameId, string returnUrl)
