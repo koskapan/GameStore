@@ -42,9 +42,9 @@ namespace GameStore.WebUI.Infrastructure
                 new Game() { GameId = 3, Name = "Game3", Description = "Some game 3", Price = 123, Category = "Cat3" },
                 new Game() { GameId = 4, Name = "Game4", Description = "Some game 4", Price = 123, Category = "Cat3" },
                 new Game() { GameId = 5, Name = "Game5", Description = "Some game 5", Price = 123, Category = "Cat2" },
-                new Game() { GameId = 3, Name = "Game6", Description = "Some game 6", Price = 123, Category = "Cat1" },
-                new Game() { GameId = 4, Name = "Game7", Description = "Some game 7", Price = 123, Category = "Cat2" },
-                new Game() { GameId = 5, Name = "Game8", Description = "Some game 8", Price = 123, Category = "Cat3" }
+                new Game() { GameId = 6, Name = "Game6", Description = "Some game 6", Price = 123, Category = "Cat1" },
+                new Game() { GameId = 7, Name = "Game7", Description = "Some game 7", Price = 123, Category = "Cat2" },
+                new Game() { GameId = 8, Name = "Game8", Description = "Some game 8", Price = 123, Category = "Cat3" }
             });
 
             kernel.Bind<IGameRepository>().ToConstant(gameRepoMock.Object);
