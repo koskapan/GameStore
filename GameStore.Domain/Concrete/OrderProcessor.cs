@@ -88,7 +88,7 @@ namespace GameStore.Domain.Concrete
                     mailMessage.BodyEncoding = Encoding.UTF8;
                 }
 
-                smtpClient.Send(mailMessage);
+                //smtpClient.Send(mailMessage);
             }
         }
     }
