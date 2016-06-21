@@ -12,10 +12,12 @@ namespace GameStore.WebUI.Controllers
     public class CartController : Controller
     {
         IGameRepository gameRepo;
+        IOrderProcessor orderProcessor;
 
-        public CartController(IGameRepository gameRepository)
+        public CartController(IGameRepository gameRepository, IOrderProcessor processor)
         {
             gameRepo = gameRepository;
+            orderProcessor = processor;
         }
 
         public ViewResult Index(Cart cart, string returnUrl)
@@ -52,9 +54,32 @@ namespace GameStore.WebUI.Controllers
             return PartialView(cart);
         }
 
-        public ViewResult Checkout(Cart cart, ShippingDetails shippingDetails)
+        [HttpGet]
+        public ViewResult Checkout()
         {
             return View(new ShippingDetails());
+        }
+
+        [HttpPost]
+        public ViewResult Checkout(Cart cart, ShippingDetails shippingDetails)
+        {
+            if (cart.Lines.Count() == 0)
+            {
+                ModelState.AddModelError("", "Sorry, cart is empty!");
+            }
+
+            if (ModelState.IsValid)
+            {
+                orderProcessor.ProcessOrder(cart, shippingDetails);
+                cart.Clear();
+                return View("Complete");
+            }
+            else
+            {
+                return View(shippingDetails);
+            }
+            
+
         }
     }
 }

@@ -120,7 +120,7 @@ namespace GameStore.UnitTests
 
             Cart cart = new Cart();
 
-            CartController controller = new CartController(repo.Object);
+            CartController controller = new CartController(repo.Object, null);
 
             controller.AddToCart(cart, 1, null);
 
@@ -139,7 +139,7 @@ namespace GameStore.UnitTests
                 new Game { GameId =1, Name = "Game1", Category = "Cat1" }
             }.AsQueryable());
             Cart cart = new Cart();
-            CartController controller = new CartController(repo.Object);
+            CartController controller = new CartController(repo.Object, null);
 
             RedirectToRouteResult result = controller.AddToCart(cart, 1, "myUrl");
 
@@ -151,7 +151,7 @@ namespace GameStore.UnitTests
         public void Can_View_Cart_Content()
         {
             Cart cart = new Cart();
-            CartController controller = new CartController(null);
+            CartController controller = new CartController(null, null);
 
             CartIndexViewModel result = (CartIndexViewModel)controller.Index(cart, "myUrl").ViewData.Model;
 
