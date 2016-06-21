@@ -12,8 +12,11 @@ namespace GameStore.Domain.Entities
         public string Name { get; set; }
 
         [Required(ErrorMessage ="Enter address")]
+        [Display(Name="First Address Line")]
         public string Line1 { get; set; }
+        [Display(Name = "Second Address Line")]
         public string Line2 { get; set; }
+        [Display(Name = "Third Address Line")]
         public string Line3 { get; set; }
 
         [Required(ErrorMessage ="Enter City")]
