@@ -6,7 +6,7 @@ using System.Text;
 
 namespace GameStore.Domain.Entities
 {
-    public class ShippingDetailst
+    public class ShippingDetails
     {
         [Required(ErrorMessage = "Please, enter your name!")]
         public string Name { get; set; }
