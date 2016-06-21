@@ -8,6 +8,7 @@ using Ninject;
 using GameStore.Domain.Abstract;
 using GameStore.Domain.Entities;
 using GameStore.Domain.Concrete;
+using System.Configuration;
 
 namespace GameStore.WebUI.Infrastructure
 {
@@ -48,6 +49,11 @@ namespace GameStore.WebUI.Infrastructure
             });
 
             kernel.Bind<IGameRepository>().ToConstant(gameRepoMock.Object);
+            var emailSettings = new EmailSettings
+            {
+                WriteAsFile = bool.Parse(ConfigurationManager.AppSettings["Email.WriteAsFile"] ?? "false")
+            };
+            kernel.Bind<IOrderProcessor>().To<OrderProcessor>().WithConstructorArgument("emailSettings", emailSettings);
         }
     }
 }
