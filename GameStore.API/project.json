@@ -1,5 +1,4 @@
-﻿
-{
+﻿{
   "version": "1.0.0-*",
   "compilationOptions": {
     "emitEntryPoint": true
@@ -23,11 +22,7 @@
   },
 
   "frameworks": {
-    "dnx451": {
-      "dependencies": {
-        "GameStore.Domain": "1.0.0-*"
-      }
-    }
+    "dnx451": { }
   },
 
   "exclude": [

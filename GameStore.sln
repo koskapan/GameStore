@@ -9,9 +9,11 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GameStore.UnitTests", "Game
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GameStore.WebUI", "GameStore.WebUI\GameStore.WebUI.csproj", "{FA5450C1-E333-46CC-A424-C54AD55FC423}"
 EndProject
-Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "GameStore.API", "GameStore.API\GameStore.API.xproj", "{6255608C-A47A-447B-9F46-41CBBA51BC64}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GameStore.Android", "GameStore.Android\GameStore.Android.csproj", "{0A48A436-A626-4B00-AC2E-66B7C9B83D71}"
+EndProject
+Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "GameStore.Api.Test", "GameStore.Api.Test\GameStore.Api.Test.xproj", "{A484B161-169D-4DF3-958D-63BC8E8B8D32}"
+EndProject
+Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "GameStore.Api", "GameStore.Api\GameStore.Api.xproj", "{8009C774-FA35-4C99-91D4-311B749E314D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -31,16 +33,20 @@ Global
 		{FA5450C1-E333-46CC-A424-C54AD55FC423}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FA5450C1-E333-46CC-A424-C54AD55FC423}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FA5450C1-E333-46CC-A424-C54AD55FC423}.Release|Any CPU.Build.0 = Release|Any CPU
-		{6255608C-A47A-447B-9F46-41CBBA51BC64}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{6255608C-A47A-447B-9F46-41CBBA51BC64}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{6255608C-A47A-447B-9F46-41CBBA51BC64}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{6255608C-A47A-447B-9F46-41CBBA51BC64}.Release|Any CPU.Build.0 = Release|Any CPU
 		{0A48A436-A626-4B00-AC2E-66B7C9B83D71}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{0A48A436-A626-4B00-AC2E-66B7C9B83D71}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0A48A436-A626-4B00-AC2E-66B7C9B83D71}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
 		{0A48A436-A626-4B00-AC2E-66B7C9B83D71}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0A48A436-A626-4B00-AC2E-66B7C9B83D71}.Release|Any CPU.Build.0 = Release|Any CPU
 		{0A48A436-A626-4B00-AC2E-66B7C9B83D71}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{A484B161-169D-4DF3-958D-63BC8E8B8D32}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A484B161-169D-4DF3-958D-63BC8E8B8D32}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A484B161-169D-4DF3-958D-63BC8E8B8D32}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A484B161-169D-4DF3-958D-63BC8E8B8D32}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8009C774-FA35-4C99-91D4-311B749E314D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8009C774-FA35-4C99-91D4-311B749E314D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8009C774-FA35-4C99-91D4-311B749E314D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8009C774-FA35-4C99-91D4-311B749E314D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
