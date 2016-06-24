@@ -3,12 +3,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNet.Mvc;
-using GameStore.Domain;
+
+// For more information on enabling Web API for empty projects, visit http://go.microsoft.com/fwlink/?LinkID=397860
 
 namespace GameStore.API.Controllers
 {
     [Route("api/[controller]")]
-    public class GamesController : Controller
+    public class CartController : Controller
     {
         // GET: api/values
         [HttpGet]
