@@ -12,6 +12,11 @@ namespace GameStore.Api.Test
         {
         }
 
+        [Fact]
+        public void Addition_Test()
+        {
+            Assert.Equal(4, 2 + 2);
+        }
 
     }
 }
