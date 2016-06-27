@@ -83,6 +83,7 @@
     <Compile Include="Concrete\EFDbContext.cs" />
     <Compile Include="Concrete\EFGameRepository.cs" />
     <Compile Include="Concrete\OrderProcessor.cs" />
+    <Compile Include="Concrete\PagingInfo.cs" />
     <Compile Include="Entities\Cart.cs" />
     <Compile Include="Entities\Game.cs" />
     <Compile Include="Entities\ShippingDetails.cs" />

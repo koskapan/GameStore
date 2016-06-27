@@ -1,4 +1,5 @@
-﻿using GameStore.WebUI.Models;
+﻿using GameStore.Domain.Concrete;
+using GameStore.WebUI.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;

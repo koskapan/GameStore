@@ -12,6 +12,7 @@ using System.Collections;
 using System.Web.Mvc;
 using GameStore.WebUI.Models;
 using GameStore.WebUI.HtmlHelpers;
+using GameStore.Domain.Concrete;
 
 namespace GameStore.UnitTests
 {

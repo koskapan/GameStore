@@ -12,27 +12,26 @@ using System.Linq.Expressions;
 namespace GameStore.Api.Controllers
 {
     [Route("api/[controller]")]
-    public class GamesController : Controller
+    public class GameController : Controller
     {
         IGameRepository repository;
+        public int pageSize = 4;
 
-        public GamesController(IGameRepository repository)
+        public GameController(IGameRepository repository)
         {
             this.repository = repository;
         }
-        
 
-        // GET: api/values
         [HttpGet]
-        public IEnumerable<Game> Get()
+        public int GetGamesCount(string category = "")
         {
-            return repository.Games.ToList();
+            return category == "" ? repository.Games.Count() : repository.Games.Where(g => g.Category == category).Count();
         }
 
         [HttpGet]
-        public IEnumerable<Game> Get(Func<Game, bool> predicate)
+        public IEnumerable<Game> Get(string category = "", int page = 1)
         {
-            return repository.Games.Where(predicate);
+            return category == "" ? repository.Games.Skip((page - 1)* pageSize).Take(pageSize) : repository.Games.Where(g => g.Category == category).Skip((page - 1) * pageSize).Take(pageSize);
         }
 
         // GET api/values/5

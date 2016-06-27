@@ -1,4 +1,5 @@
 ﻿using GameStore.Domain.Abstract;
+using GameStore.Domain.Concrete;
 using GameStore.Domain.Entities;
 using GameStore.WebUI.Models;
 using System;

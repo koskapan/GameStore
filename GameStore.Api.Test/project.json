@@ -1,4 +1,4 @@
-﻿{
+{
   "version": "1.0.0-*",
   "description": "GameStore.Api.Test Class Library",
   "authors": [ "koskapan" ],
@@ -14,7 +14,8 @@
     "System.Threading": "4.0.11-beta-23516",
     "xunit.runner.dnx": "2.1.0-rc1-build204",
     "xunit": "2.1.0-rc2-build3176",
-    "GameStore.Api": "1.0.0-*"
+    "GameStore.Api": "1.0.0-*",
+    "Moq": "4.5.10"
   },
 
   "commands": {
