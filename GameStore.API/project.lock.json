@@ -1478,27 +1478,6 @@
           "lib/net45/Newtonsoft.Json.dll": {}
         }
       },
-      "Ninject/3.2.0": {
-        "type": "package",
-        "compile": {
-          "lib/net45-full/Ninject.dll": {}
-        },
-        "runtime": {
-          "lib/net45-full/Ninject.dll": {}
-        }
-      },
-      "Ninject.Web.Common/3.2.3": {
-        "type": "package",
-        "dependencies": {
-          "Ninject": "[3.2.0, 3.3.0)"
-        },
-        "compile": {
-          "lib/net45-full/Ninject.Web.Common.dll": {}
-        },
-        "runtime": {
-          "lib/net45-full/Ninject.Web.Common.dll": {}
-        }
-      },
       "System.Collections/4.0.0": {
         "type": "package",
         "compile": {
@@ -3188,27 +3167,6 @@
         },
         "runtime": {
           "lib/net45/Newtonsoft.Json.dll": {}
-        }
-      },
-      "Ninject/3.2.0": {
-        "type": "package",
-        "compile": {
-          "lib/net45-full/Ninject.dll": {}
-        },
-        "runtime": {
-          "lib/net45-full/Ninject.dll": {}
-        }
-      },
-      "Ninject.Web.Common/3.2.3": {
-        "type": "package",
-        "dependencies": {
-          "Ninject": "[3.2.0, 3.3.0)"
-        },
-        "compile": {
-          "lib/net45-full/Ninject.Web.Common.dll": {}
-        },
-        "runtime": {
-          "lib/net45-full/Ninject.Web.Common.dll": {}
         }
       },
       "System.Collections/4.0.0": {
@@ -4902,27 +4860,6 @@
           "lib/net45/Newtonsoft.Json.dll": {}
         }
       },
-      "Ninject/3.2.0": {
-        "type": "package",
-        "compile": {
-          "lib/net45-full/Ninject.dll": {}
-        },
-        "runtime": {
-          "lib/net45-full/Ninject.dll": {}
-        }
-      },
-      "Ninject.Web.Common/3.2.3": {
-        "type": "package",
-        "dependencies": {
-          "Ninject": "[3.2.0, 3.3.0)"
-        },
-        "compile": {
-          "lib/net45-full/Ninject.Web.Common.dll": {}
-        },
-        "runtime": {
-          "lib/net45-full/Ninject.Web.Common.dll": {}
-        }
-      },
       "System.Collections/4.0.0": {
         "type": "package",
         "compile": {
@@ -6348,48 +6285,6 @@
         "tools/install.ps1"
       ]
     },
-    "Ninject/3.2.0": {
-      "type": "package",
-      "sha512": "CN7i6J/a1y85jVdeg0FkH5Obqo47SVQBU5929NPmlsi/AbE6ofJoStPHJco4H3aSI696obvoDmFxbZ+tfz7m6A==",
-      "files": [
-        "lib/net35/Ninject.dll",
-        "lib/net35/Ninject.xml",
-        "lib/net40/Ninject.dll",
-        "lib/net40/Ninject.xml",
-        "lib/net45-full/Ninject.dll",
-        "lib/net45-full/Ninject.xml",
-        "lib/sl2/Ninject.dll",
-        "lib/sl2/Ninject.xml",
-        "lib/sl3/Ninject.dll",
-        "lib/sl3/Ninject.xml",
-        "lib/sl3-wp/Ninject.dll",
-        "lib/sl3-wp/Ninject.xml",
-        "lib/sl4/Ninject.dll",
-        "lib/sl4/Ninject.xml",
-        "lib/sl4-windowsphone71/Ninject.dll",
-        "lib/sl4-windowsphone71/Ninject.xml",
-        "lib/sl5/Ninject.dll",
-        "lib/sl5/Ninject.xml",
-        "Ninject.3.2.0.nupkg",
-        "Ninject.3.2.0.nupkg.sha512",
-        "Ninject.nuspec"
-      ]
-    },
-    "Ninject.Web.Common/3.2.3": {
-      "type": "package",
-      "sha512": "q3W9ioPj+SLXk0z5qFRyeXpom/WTq+ZToSVxNOomt4TMyKdP0z0BzyMoH1ig8YWs6yOVN3g89De1VXIEqZ989Q==",
-      "files": [
-        "lib/net35-full/Ninject.Web.Common.dll",
-        "lib/net35-full/Ninject.Web.Common.xml",
-        "lib/net40-full/Ninject.Web.Common.dll",
-        "lib/net40-full/Ninject.Web.Common.xml",
-        "lib/net45-full/Ninject.Web.Common.dll",
-        "lib/net45-full/Ninject.Web.Common.xml",
-        "Ninject.Web.Common.3.2.3.nupkg",
-        "Ninject.Web.Common.3.2.3.nupkg.sha512",
-        "Ninject.Web.Common.nuspec"
-      ]
-    },
     "System.Collections/4.0.0": {
       "type": "package",
       "sha512": "i2vsGDIEbWdHcUSNDPKZP/ZWod6o740el7mGTCy0dqbCxQh74W4QoC+klUwPEtGEFuvzJ7bJgvwJqscosVNyZQ==",
@@ -7177,8 +7072,7 @@
       "Microsoft.Extensions.Logging >= 1.0.0-rc1-final",
       "Microsoft.Extensions.Logging.Console >= 1.0.0-rc1-final",
       "Microsoft.Extensions.Logging.Debug >= 1.0.0-rc1-final",
-      "Moq >= 4.5.10",
-      "Ninject.Web.Common >= 3.2.3"
+      "Moq >= 4.5.10"
     ],
     "DNX,Version=v4.5.1": [
       "GameStore.Domain >= 1.0.0-*"

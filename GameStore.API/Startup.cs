@@ -38,7 +38,7 @@ namespace GameStore.Api
         {
             // Add framework services.
             services.AddApplicationInsightsTelemetry(Configuration);
-            services.AddTransient<IGameRepository>(s => CreateRepositoryMock());
+            services.AddSingleton<IGameRepository>(s => CreateRepositoryMock());
             services.AddMvc();
         }
 
