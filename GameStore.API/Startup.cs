@@ -38,7 +38,7 @@ namespace GameStore.Api
         {
             // Add framework services.
             services.AddApplicationInsightsTelemetry(Configuration);
-            services.AddSingleton<IGameRepository>(s => CreateRepositoryMock());
+            services.AddInstance(CreateRepositoryMock());
             services.AddMvc();
         }
 
@@ -47,6 +47,7 @@ namespace GameStore.Api
             Mock<IGameRepository> gameRepoMock = new Mock<IGameRepository>();
             gameRepoMock.Setup(g => g.Games).Returns(new List<Game>
             {
+                new Game() { GameId = 0, Name = "Game0", Description = "Some game 0", Price = 123, Category = "Cat2" },
                 new Game() { GameId = 1, Name = "Game1", Description = "Some game 1", Price = 123, Category = "Cat1" },
                 new Game() { GameId = 2, Name = "Game2", Description = "Some game 2", Price = 123, Category = "Cat2" },
                 new Game() { GameId = 3, Name = "Game3", Description = "Some game 3", Price = 123, Category = "Cat3" },

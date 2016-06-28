@@ -14,26 +14,54 @@ namespace GameStore.Api.Test
 {
     public class ApiUnitTest
     {
-        [Fact]
-        public void WebApi_CanPaginate()
+        private IGameRepository ConfigureMock()
         {
-            Mock<IGameRepository> mock = new Mock<IGameRepository>();
-            mock.Setup(r => r.Games).Returns(new List<Game>
+            Mock<IGameRepository> gameRepoMock = new Mock<IGameRepository>();
+            gameRepoMock.Setup(g => g.Games).Returns(new List<Game>
             {
-                new Game { GameId = 1, Name = "Game1" },
-                new Game { GameId = 2, Name = "Game2" },
-                new Game { GameId = 3, Name = "Game3" },
-                new Game { GameId = 4, Name = "Game4" },
-                new Game { GameId = 5, Name = "Game5" },
-                new Game { GameId = 6, Name = "Game6" },
-                new Game { GameId = 7, Name = "Game7" }
+                new Game() { GameId = 0, Name = "Game0", Description = "Some game 0", Price = 123, Category = "Cat2" },
+                new Game() { GameId = 1, Name = "Game1", Description = "Some game 1", Price = 123, Category = "Cat1" },
+                new Game() { GameId = 2, Name = "Game2", Description = "Some game 2", Price = 123, Category = "Cat2" },
+                new Game() { GameId = 3, Name = "Game3", Description = "Some game 3", Price = 123, Category = "Cat3" },
+                new Game() { GameId = 4, Name = "Game4", Description = "Some game 4", Price = 123, Category = "Cat3" },
+                new Game() { GameId = 5, Name = "Game5", Description = "Some game 5", Price = 123, Category = "Cat2" },
+                new Game() { GameId = 6, Name = "Game6", Description = "Some game 6", Price = 123, Category = "Cat1" },
+                new Game() { GameId = 7, Name = "Game7", Description = "Some game 7", Price = 123, Category = "Cat2" },
+                new Game() { GameId = 8, Name = "Game8", Description = "Some game 8", Price = 123, Category = "Cat3" }
             });
-            GameController controller = new GameController(mock.Object);
+            return gameRepoMock.Object;
+        }
 
-            List<Game> result = controller.Get("", 2).ToList();
+        [Fact]
+        public void Can_Categirize()
+        {            
+            GamesController controller = new GamesController(ConfigureMock());
 
-            Assert.Equal(3, result.Count);
-            Assert.Equal(5, result[0].GameId);
+            List<Game> result = controller.Get("Cat2", 1,4).ToList();
+
+            Assert.Equal(4, result.Count);
+            Assert.Equal(0, result[0].GameId);
+        }
+
+        [Fact]
+        public void Can_Get_Games()
+        {
+            GamesController controller = new GamesController(ConfigureMock());
+
+            IEnumerable<Game> result = controller.Get();
+
+            Assert.Equal(9, result.Count());
+        }
+
+        [Fact]
+        public void Can_Paginate()
+        {
+            GamesController controller = new GamesController(ConfigureMock());
+
+            List<Game> result = controller.Get("",2, 4).ToList();
+
+            Assert.Equal(4, result.Count());
+            Assert.Equal(4, result[0].GameId);
         }
 
     }
