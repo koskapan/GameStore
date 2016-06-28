@@ -41,10 +41,7 @@
           "Microsoft.Extensions.Logging": "1.0.0-rc1-final",
           "Microsoft.Extensions.Logging.Console": "1.0.0-rc1-final",
           "Microsoft.Extensions.Logging.Debug": "1.0.0-rc1-final",
-          "Moq": "4.5.10",
-          "Ninject": "3.2.2",
-          "Ninject.MVC3": "3.2.1",
-          "Ninject.Web.Common": "3.2.3"
+          "Moq": "4.5.10"
         }
       },
       "GameStore.Domain/1.0.0": {
@@ -1549,53 +1546,6 @@
           "lib/net45/Newtonsoft.Json.dll": {}
         }
       },
-      "Ninject/3.2.2": {
-        "type": "package",
-        "compile": {
-          "lib/net45-full/Ninject.dll": {}
-        },
-        "runtime": {
-          "lib/net45-full/Ninject.dll": {}
-        }
-      },
-      "Ninject.MVC3/3.2.1": {
-        "type": "package",
-        "dependencies": {
-          "Ninject": "[3.2.0, 3.3.0)",
-          "Ninject.Web.Common.WebHost": "3.0.0"
-        },
-        "frameworkAssemblies": [
-          "Microsoft.Web.Infrastructure"
-        ],
-        "compile": {
-          "lib/net45-full/Ninject.Web.Mvc.dll": {}
-        },
-        "runtime": {
-          "lib/net45-full/Ninject.Web.Mvc.dll": {}
-        }
-      },
-      "Ninject.Web.Common/3.2.3": {
-        "type": "package",
-        "dependencies": {
-          "Ninject": "[3.2.0, 3.3.0)"
-        },
-        "compile": {
-          "lib/net45-full/Ninject.Web.Common.dll": {}
-        },
-        "runtime": {
-          "lib/net45-full/Ninject.Web.Common.dll": {}
-        }
-      },
-      "Ninject.Web.Common.WebHost/3.0.2-unstable-0": {
-        "type": "package",
-        "dependencies": {
-          "Ninject.Web.Common": "3.0.0-unstable",
-          "WebActivator": "1.5.0"
-        },
-        "frameworkAssemblies": [
-          "Microsoft.Web.Infrastructure"
-        ]
-      },
       "System.Collections/4.0.11-beta-23516": {
         "type": "package",
         "compile": {
@@ -1807,18 +1757,6 @@
           "lib/net45/_._": {}
         }
       },
-      "WebActivator/1.5.0": {
-        "type": "package",
-        "dependencies": {
-          "Microsoft.Web.Infrastructure": "1.0.0"
-        },
-        "compile": {
-          "lib/net40/WebActivator.dll": {}
-        },
-        "runtime": {
-          "lib/net40/WebActivator.dll": {}
-        }
-      },
       "xunit/2.1.0-rc2-build3176": {
         "type": "package",
         "dependencies": {
@@ -1968,10 +1906,7 @@
           "Microsoft.Extensions.Logging": "1.0.0-rc1-final",
           "Microsoft.Extensions.Logging.Console": "1.0.0-rc1-final",
           "Microsoft.Extensions.Logging.Debug": "1.0.0-rc1-final",
-          "Moq": "4.5.10",
-          "Ninject": "3.2.2",
-          "Ninject.MVC3": "3.2.1",
-          "Ninject.Web.Common": "3.2.3"
+          "Moq": "4.5.10"
         }
       },
       "GameStore.Domain/1.0.0": {
@@ -3479,53 +3414,6 @@
           "lib/net45/Newtonsoft.Json.dll": {}
         }
       },
-      "Ninject/3.2.2": {
-        "type": "package",
-        "compile": {
-          "lib/net45-full/Ninject.dll": {}
-        },
-        "runtime": {
-          "lib/net45-full/Ninject.dll": {}
-        }
-      },
-      "Ninject.MVC3/3.2.1": {
-        "type": "package",
-        "dependencies": {
-          "Ninject": "[3.2.0, 3.3.0)",
-          "Ninject.Web.Common.WebHost": "3.0.0"
-        },
-        "frameworkAssemblies": [
-          "Microsoft.Web.Infrastructure"
-        ],
-        "compile": {
-          "lib/net45-full/Ninject.Web.Mvc.dll": {}
-        },
-        "runtime": {
-          "lib/net45-full/Ninject.Web.Mvc.dll": {}
-        }
-      },
-      "Ninject.Web.Common/3.2.3": {
-        "type": "package",
-        "dependencies": {
-          "Ninject": "[3.2.0, 3.3.0)"
-        },
-        "compile": {
-          "lib/net45-full/Ninject.Web.Common.dll": {}
-        },
-        "runtime": {
-          "lib/net45-full/Ninject.Web.Common.dll": {}
-        }
-      },
-      "Ninject.Web.Common.WebHost/3.0.2-unstable-0": {
-        "type": "package",
-        "dependencies": {
-          "Ninject.Web.Common": "3.0.0-unstable",
-          "WebActivator": "1.5.0"
-        },
-        "frameworkAssemblies": [
-          "Microsoft.Web.Infrastructure"
-        ]
-      },
       "runtime.win7.System.Threading/4.0.11-beta-23516": {
         "type": "package",
         "compile": {
@@ -3743,18 +3631,6 @@
           "lib/net45/_._": {}
         }
       },
-      "WebActivator/1.5.0": {
-        "type": "package",
-        "dependencies": {
-          "Microsoft.Web.Infrastructure": "1.0.0"
-        },
-        "compile": {
-          "lib/net40/WebActivator.dll": {}
-        },
-        "runtime": {
-          "lib/net40/WebActivator.dll": {}
-        }
-      },
       "xunit/2.1.0-rc2-build3176": {
         "type": "package",
         "dependencies": {
@@ -3904,10 +3780,7 @@
           "Microsoft.Extensions.Logging": "1.0.0-rc1-final",
           "Microsoft.Extensions.Logging.Console": "1.0.0-rc1-final",
           "Microsoft.Extensions.Logging.Debug": "1.0.0-rc1-final",
-          "Moq": "4.5.10",
-          "Ninject": "3.2.2",
-          "Ninject.MVC3": "3.2.1",
-          "Ninject.Web.Common": "3.2.3"
+          "Moq": "4.5.10"
         }
       },
       "GameStore.Domain/1.0.0": {
@@ -5415,53 +5288,6 @@
           "lib/net45/Newtonsoft.Json.dll": {}
         }
       },
-      "Ninject/3.2.2": {
-        "type": "package",
-        "compile": {
-          "lib/net45-full/Ninject.dll": {}
-        },
-        "runtime": {
-          "lib/net45-full/Ninject.dll": {}
-        }
-      },
-      "Ninject.MVC3/3.2.1": {
-        "type": "package",
-        "dependencies": {
-          "Ninject": "[3.2.0, 3.3.0)",
-          "Ninject.Web.Common.WebHost": "3.0.0"
-        },
-        "frameworkAssemblies": [
-          "Microsoft.Web.Infrastructure"
-        ],
-        "compile": {
-          "lib/net45-full/Ninject.Web.Mvc.dll": {}
-        },
-        "runtime": {
-          "lib/net45-full/Ninject.Web.Mvc.dll": {}
-        }
-      },
-      "Ninject.Web.Common/3.2.3": {
-        "type": "package",
-        "dependencies": {
-          "Ninject": "[3.2.0, 3.3.0)"
-        },
-        "compile": {
-          "lib/net45-full/Ninject.Web.Common.dll": {}
-        },
-        "runtime": {
-          "lib/net45-full/Ninject.Web.Common.dll": {}
-        }
-      },
-      "Ninject.Web.Common.WebHost/3.0.2-unstable-0": {
-        "type": "package",
-        "dependencies": {
-          "Ninject.Web.Common": "3.0.0-unstable",
-          "WebActivator": "1.5.0"
-        },
-        "frameworkAssemblies": [
-          "Microsoft.Web.Infrastructure"
-        ]
-      },
       "runtime.win7.System.Threading/4.0.11-beta-23516": {
         "type": "package",
         "compile": {
@@ -5677,18 +5503,6 @@
         },
         "runtime": {
           "lib/net45/_._": {}
-        }
-      },
-      "WebActivator/1.5.0": {
-        "type": "package",
-        "dependencies": {
-          "Microsoft.Web.Infrastructure": "1.0.0"
-        },
-        "compile": {
-          "lib/net40/WebActivator.dll": {}
-        },
-        "runtime": {
-          "lib/net40/WebActivator.dll": {}
         }
       },
       "xunit/2.1.0-rc2-build3176": {
@@ -7095,71 +6909,6 @@
         "tools/install.ps1"
       ]
     },
-    "Ninject/3.2.2": {
-      "type": "package",
-      "sha512": "vDyKaDZ1RgmPxD87u3om3La34r4RHBZfap3tCsJtUbSGkIWjQJ8La1s61BR/C0LgO1+3xGEC6UfI7D594MNl5Q==",
-      "files": [
-        "lib/net35/Ninject.dll",
-        "lib/net35/Ninject.xml",
-        "lib/net40/Ninject.dll",
-        "lib/net40/Ninject.xml",
-        "lib/net45-full/Ninject.dll",
-        "lib/net45-full/Ninject.xml",
-        "lib/sl2/Ninject.dll",
-        "lib/sl2/Ninject.xml",
-        "lib/sl3/Ninject.dll",
-        "lib/sl3/Ninject.xml",
-        "lib/sl3-wp/Ninject.dll",
-        "lib/sl3-wp/Ninject.xml",
-        "lib/sl4/Ninject.dll",
-        "lib/sl4/Ninject.xml",
-        "lib/sl4-windowsphone71/Ninject.dll",
-        "lib/sl4-windowsphone71/Ninject.xml",
-        "lib/sl5/Ninject.dll",
-        "lib/sl5/Ninject.xml",
-        "Ninject.3.2.2.nupkg",
-        "Ninject.3.2.2.nupkg.sha512",
-        "Ninject.nuspec"
-      ]
-    },
-    "Ninject.MVC3/3.2.1": {
-      "type": "package",
-      "sha512": "/6rUOixiAPdBNhsl3KaOjaX1KMdizLsufIeO9k4R3kY0NIivchlLorCvb3Ks+BIvV6KZ85KPtKBBc6tHX0W7Kg==",
-      "files": [
-        "lib/net40-full/Ninject.Web.Mvc.dll",
-        "lib/net40-full/Ninject.Web.Mvc.xml",
-        "lib/net45-full/Ninject.Web.Mvc.dll",
-        "lib/net45-full/Ninject.Web.Mvc.xml",
-        "Ninject.MVC3.3.2.1.nupkg",
-        "Ninject.MVC3.3.2.1.nupkg.sha512",
-        "Ninject.MVC3.nuspec"
-      ]
-    },
-    "Ninject.Web.Common/3.2.3": {
-      "type": "package",
-      "sha512": "q3W9ioPj+SLXk0z5qFRyeXpom/WTq+ZToSVxNOomt4TMyKdP0z0BzyMoH1ig8YWs6yOVN3g89De1VXIEqZ989Q==",
-      "files": [
-        "lib/net35-full/Ninject.Web.Common.dll",
-        "lib/net35-full/Ninject.Web.Common.xml",
-        "lib/net40-full/Ninject.Web.Common.dll",
-        "lib/net40-full/Ninject.Web.Common.xml",
-        "lib/net45-full/Ninject.Web.Common.dll",
-        "lib/net45-full/Ninject.Web.Common.xml",
-        "Ninject.Web.Common.3.2.3.nupkg",
-        "Ninject.Web.Common.3.2.3.nupkg.sha512",
-        "Ninject.Web.Common.nuspec"
-      ]
-    },
-    "Ninject.Web.Common.WebHost/3.0.2-unstable-0": {
-      "type": "package",
-      "sha512": "vjhWtyuOcf4E66xqhdxm5Eg4/raBJ1kaJ30nouOCsmxYgUaNKZkMEU1PMSmDm5L+PqzyLJQV61YRTocDY9XkaA==",
-      "files": [
-        "Content/App_Start/NinjectWebCommon.cs.pp",
-        "Ninject.Web.Common.WebHost.3.0.2-unstable-0.nupkg",
-        "Ninject.Web.Common.WebHost.3.0.2-unstable-0.nupkg.sha512",
-        "Ninject.Web.Common.WebHost.nuspec"
-      ]
-    },
     "runtime.win7.System.Threading/4.0.11-beta-23516": {
       "type": "package",
       "serviceable": true,
@@ -8006,16 +7755,6 @@
         "System.Threading.4.0.11-beta-23516.nupkg",
         "System.Threading.4.0.11-beta-23516.nupkg.sha512",
         "System.Threading.nuspec"
-      ]
-    },
-    "WebActivator/1.5.0": {
-      "type": "package",
-      "sha512": "ydipCDwXsH9MZQT57Ev88pjE+ENzNh5a5nvG9go7xNxBtFf87tL56PmQUUrj7StaE+FuqVNxid3DuRGYY59xeQ==",
-      "files": [
-        "lib/net40/WebActivator.dll",
-        "WebActivator.1.5.0.nupkg",
-        "WebActivator.1.5.0.nupkg.sha512",
-        "WebActivator.nuspec"
       ]
     },
     "xunit/2.1.0-rc2-build3176": {
